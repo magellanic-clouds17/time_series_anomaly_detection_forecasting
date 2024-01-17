@@ -6,7 +6,7 @@ This repository contains a time series forecasting project focused on predicting
 
 ## Data
 
-The dataset used is "Hourly Power Consumption of Turkey (2016-2020)" which includes hourly energy consumption data in Megawatt-hours (MWh). The data from 2016 to 2018 was used to train the model, and the data from 2019 was used for testing and validating the predictions.
+The dataset used is "Hourly Power Consumption of Turkey (2016-2020)" from Kaggle, which includes hourly energy consumption data in Megawatt-hours (MWh). The data from 2016 to 2018 was used to train the model, and the data from 2019 was used for testing and validating the predictions.
 
 ## Methodology
 
@@ -26,8 +26,4 @@ The project follows these steps:
 
 ## Conclusion
 
-This project successfully demonstrates the ability to forecast energy consumption using machine learning techniques. It highlights the importance of careful feature engineering and the effectiveness of gradient boosting algorithms in handling time series data.
-
----
-
-Feel free to adjust or add any additional details as needed for your GitHub repository. This README provides a structured summary of your project, emphasizing the data, methodology, results, and conclusion.
+This project successfully demonstrates the ability to forecast energy consumption using machine learning techniques. It illustrates a simple form of feature engineering and the effectiveness of gradient boosting algorithms in handling time series data.
