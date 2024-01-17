@@ -11,7 +11,7 @@ df.tail()
 color_pal = sns.color_palette()
 df['Consumption (MWh)'].plot(style='.', figsize=(15,5), color=color_pal[0], title='Energy Consumption in MWh')
 
-# plot Consumption (MWh) column for the an exemplary week in 2016 a line plot and dot plot
+# plot Consumption (MWh) column for the an exemplary week in 2016 a line plot and dot plot.
 df['Consumption (MWh)'].loc['2016-01-04':'2016-01-10'].plot(figsize=(15,5), title='Energy Consumption in MWh')
 df['Consumption (MWh)'].loc['2016-01-04':'2016-01-10'].plot(style='.', figsize=(15,5), color=color_pal[0], title='Energy Consumption in MWh')
 
