@@ -32,6 +32,6 @@ df = df[df['Consumption (MWh)'] > 1000]
 # remove 2020 data
 df = df[df.index.year < 2020]
 
-# save data frame to data/processed
+# save data frame to data/processed.
 processed_data_path = r'C:\Users\Latitude\Desktop\Kaggle\time_series_energy_portfolio_project\data\processed\RealTimeConsumption-01012016-31122019.csv'
 df.to_csv(processed_data_path)
