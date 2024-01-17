@@ -87,7 +87,7 @@ plt.plot(df['predictions'], label='predictions')
 plt.legend()
 plt.title('Complete Actual Data and Predictions')
 
-# print the mean absolute error, mean squared error and r2 score for the year 2019
+# print the mean absolute error, mean squared error and r2 score for the year 2019.
 mae = mean_absolute_error(test['Consumption (MWh)'], test['predictions'])
 mse = mean_squared_error(test['Consumption (MWh)'], test['predictions'])
 r2 = r2_score(test['Consumption (MWh)'], test['predictions'])
