@@ -23,9 +23,11 @@ The project follows these steps:
 
 ## Key Results
   
+  ### Evaluation
   - MAE: 1403.981
   - MSE: 4865901.909
   - R2: 0.781
+  ### Visualization
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/e67fab2d-f9da-4838-9f56-c3995cc9dd4d)
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/3833a07c-848c-4dcf-8c0d-391b76366cc0)
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/ad72d878-6234-4289-822a-6f11a3e9829f)
