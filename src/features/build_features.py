@@ -7,7 +7,7 @@ df = pd.read_csv(processed_data_path, index_col=0)
 # convert index to datetime
 df.index = pd.to_datetime(df.index)
 
-# build features day_of_week, day_of_month, month, year, hour
+# build features day_of_week, day_of_month, month, year, hour.
 df['year'] = df.index.year
 df['day_of_month'] = df.index.day
 df['month'] = df.index.month
