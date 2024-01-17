@@ -16,13 +16,16 @@ The project follows these steps:
 2. **Exploratory Data Analysis (`visualize.py`):** Visualizing the energy consumption trends over time.
 3. **Feature Engineering (`build_features.py`):** Creating additional features like day of the week, month, and hour to improve the model's performance.
 4. **Model Training and Evaluation (`train_model.py`):** Using XGBoost for time series forecasting and evaluating its performance on the 2019 data.
+  - The XGBoost model was trained with early stopping to prevent overfitting.
+  - Feature importance was analyzed to understand the impact of different time-related features.
+  - The model's predictions for the year 2019 were plotted against actual values, showing how closely the model could predict real-world data.
+  - Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.
 
 ## Key Results
-
-- The XGBoost model was trained with early stopping to prevent overfitting.
-- Feature importance was analyzed to understand the impact of different time-related features.
-- The model's predictions for the year 2019 were plotted against actual values, showing how closely the model could predict real-world data.
-- Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.
+  
+  - MAE: 1403.981
+  - MSE: 4865901.909
+  - R2: 0.781
 
 ## Conclusion
 
