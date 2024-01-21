@@ -20,7 +20,7 @@ The project follows these steps:
     - Feature importance was analyzed to understand the impact of different time-related features.
     - The model's predictions for the year 2019 were plotted against actual values, showing how closely the model could predict real-world data.
     - Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.
-5. **Anomaly Detection (anomaly_detection.py):** Identifying unusual patterns in energy consumption.
+5. **Anomaly Detection (`anomaly_detection.py`):** Identifying unusual patterns in energy consumption.
     - Utilized the Isolation Forest algorithm to estimate and identify anomalies in the dataset.
     - Configured the model with a contamination factor of 0.01, indicating an expected proportion of outlier data.
     - Predicted and labeled data points as normal or anomalies, based on the model's output.
