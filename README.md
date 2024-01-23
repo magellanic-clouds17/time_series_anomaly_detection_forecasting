@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains a time series forecasting project focused on predicting the hourly energy consumption of Turkey using data from 2016 to 2018 to forecast for the year 2019. The project aims to demonstrate my skills in handling time series data.
+This repository contains a time series forecasting project focused on predicting the hourly energy consumption of Turkey using data from 2016 to 2018 to forecast for the year 2019 (https://www.kaggle.com/datasets/hgultekin/hourly-power-consumption-of-turkey-20162020). The project aims to demonstrate my skills in handling time series data.
 
 ## Data
 
