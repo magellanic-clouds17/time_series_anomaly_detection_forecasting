@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains a time series forecasting project focused on predicting the hourly energy consumption of Turkey using data from 2016 to 2018 to forecast for the year 2019. The project aims to demonstrate my skills in handling time series data.
+This repository contains a time series forecasting project focused on predicting the hourly energy consumption of Turkey using data from 2016 to 2018 to forecast for the year 2019 (https://www.kaggle.com/datasets/hgultekin/hourly-power-consumption-of-turkey-20162020). The project aims to demonstrate my skills in handling time series data.
 
 ## Data
 
@@ -20,6 +20,10 @@ The project follows these steps:
     - Feature importance was analyzed to understand the impact of different time-related features.
     - The model's predictions for the year 2019 were plotted against actual values, showing how closely the model could predict real-world data.
     - Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.
+5. **Anomaly Detection (`anomaly_detection.py`):** Identifying unusual patterns in energy consumption.
+    - Utilized the Isolation Forest algorithm to estimate and identify anomalies in the dataset.
+    - Configured the model with a contamination factor of 0.01, indicating an expected proportion of outlier data.
+    - Predicted and labeled data points as normal or anomalies, based on the model's output.
 
 ## Key Results
   
@@ -32,6 +36,7 @@ The project follows these steps:
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/3833a07c-848c-4dcf-8c0d-391b76366cc0)
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/ad72d878-6234-4289-822a-6f11a3e9829f)
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/21ef88ba-f298-4cdc-b08b-32a8a3d6d051)
+  - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/d677f973-b06c-4615-a21a-a9a0a08b3f67)
 
 ## Conclusion
 
