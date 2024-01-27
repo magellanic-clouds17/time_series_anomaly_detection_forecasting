@@ -18,7 +18,7 @@ contamination = 0.01
 # build isolation forest model
 model = IsolationForest(contamination=contamination, n_estimators=1000)
 
-#reshape the 'Consumption (MWh)' column since the model expects a 2D array
+# fit the model and reshape the 'Consumption (MWh)' column since the model expects a 2D array
 model.fit(df['Consumption (MWh)'].values.reshape(-1, 1))
 
 # add anomaly column to dataframe
