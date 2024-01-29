@@ -66,6 +66,49 @@ for id in error_ids:
     # Check if prior_row and following_row are not empty and fill in the missing value with average of prior and following row
     if not prior_row.empty and not following_row.empty:
         df.loc[df['id'] == id, 'Consumption (MWh)'] = (prior_row['Consumption (MWh)'].values[0] + following_row['Consumption (MWh)'].values[0]) / 2
+       
+#check how many hours each year has
+print (df[df.index.year == 2016].shape) 
+print (df[df.index.year == 2017].shape)
+print (df[df.index.year == 2018].shape)
+print (df[df.index.year == 2019].shape)
+
+# how many hours should a normal and a leap year have?
+print(24*366)
+print(24*365)
+
+# calculate sum of missing hours in 2016, 2017, 2018 and 2019
+print(24*366 - df[df.index.year == 2016].shape[0]) # 21
+print(24*365 - df[df.index.year == 2017].shape[0]) # 75
+print(24*365 - df[df.index.year == 2018].shape[0]) # 122 
+print(24*365 - df[df.index.year == 2019].shape[0]) # 150
+
+# check df.index.hour for missing hours
+df.index.hour.value_counts().sort_index()
+# print all rows before and after missing hours
+missing_hour_info = []
+
+for i in range(1, len(df) - 1):
+    prev_hour = df.index[i - 1].hour
+    current_hour = df.index[i].hour
+    next_hour = df.index[i + 1].hour
+
+    # Check if there's a missing hour between the previous and next
+    if not ((current_hour == (prev_hour + 1) % 24) or (prev_hour == 23 and current_hour == 0)):
+            missing_hour_info.append((df.iloc[i - 1], df.iloc[i + 1]))
+
+# Print the rows before and after the missing hour
+for before, after in missing_hour_info:
+    print("Row before missing hour:\n", before)
+    print('------------------------')
+    print("Row after missing hour:\n", after)
+    print('\n')
+
+# add new rows with missing hours and fill them with nan values for column Consumption (MWh)
+df['Consumption (MWh)'] = df['Consumption (MWh)'].reindex(index, fill_value=0)
+
+
+
 
 # save data frame to data/processed.
 processed_data_path = r'C:\Users\Latitude\Desktop\Kaggle\time_series_energy_portfolio_project\data\processed\RealTimeConsumption-01012016-31122019.csv'
