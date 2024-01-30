@@ -13,24 +13,28 @@ The dataset used is "Hourly Power Consumption of Turkey (2016-2020)" from Kaggle
 The project follows these steps:
 
 1. **Data Preprocessing (`make_dataset.py`):** Importing, cleaning, and preparing the dataset for analysis.
-2. **Exploratory Data Analysis (`visualize.py`):** Visualizing the energy consumption trends over time.
-3. **Feature Engineering (`build_features.py`):** Creating additional features like day of the week, month, and hour to improve the model's performance.
-4. **Model Training and Evaluation (`train_model.py`):** Using XGBoost for time series forecasting and evaluating its performance on the 2019 data.
+       1.1 **Data Preprocessing (`make_dataset_v2.py`):** adding missing hour rows and interpolate values
+3. **Exploratory Data Analysis (`visualize.py`):** Visualizing the energy consumption trends over time.
+4. **Feature Engineering (`build_features.py`):** Creating additional features like day of the week, month, and hour to improve the model's performance.
+       4.1 **Feature Engineering (`build_features_v2.py`):** Creating additional features like day of the year, yearly lags 1 and 2.
+6. **Model Training and Evaluation (`train_model.py`):** Using XGBoost for time series forecasting and evaluating its performance on the 2019 data.
     - The XGBoost model was trained with early stopping to prevent overfitting.
     - Feature importance was analyzed to understand the impact of different time-related features.
     - The model's predictions for the year 2019 were plotted against actual values, showing how closely the model could predict real-world data.
     - Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.
-5. **Anomaly Detection (`anomaly_detection.py`):** Identifying unusual patterns in energy consumption.
+        6.1 **Model Training and Evaluation (`train_model_v2.py`):** Trained on data with more advanced cleaning and feature engineering.
+7. **Anomaly Detection (`anomaly_detection.py`):** Identifying unusual patterns in energy consumption.
     - Utilized the Isolation Forest algorithm to estimate and identify anomalies in the dataset.
     - Configured the model with a contamination factor of 0.01, indicating an expected proportion of outlier data.
     - Predicted and labeled data points as normal or anomalies, based on the model's output.
 
 ## Key Results
+The _v2 data performed worse on the Evaluation (MAE:1567.426 MSE:5475637.342 R²:0.753), hence it's not visualized hereinafter.
   
   ### Evaluation
   - MAE: 1403.981
   - MSE: 4865901.909
-  - R2: 0.781
+  - R²: 0.781
   ### Visualization
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/e67fab2d-f9da-4838-9f56-c3995cc9dd4d)
   - ![image](https://github.com/magellanic-clouds17/time_series_anomaly_detection_forecasting/assets/72970703/3833a07c-848c-4dcf-8c0d-391b76366cc0)
