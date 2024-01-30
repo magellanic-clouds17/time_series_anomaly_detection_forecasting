@@ -13,10 +13,10 @@ The dataset used is "Hourly Power Consumption of Turkey (2016-2020)" from Kaggle
 The project follows these steps:
 
 1. **Data Preprocessing (`make_dataset.py`):** Importing, cleaning, and preparing the dataset for analysis.\
-       1.1 **Data Preprocessing (`make_dataset_v2.py`):** adding missing hour rows and interpolate values
+       1.1 **Advanced Data Preprocessing (`make_dataset_v2.py`):** adding missing hour rows and interpolate values
 3. **Exploratory Data Analysis (`visualize.py`):** Visualizing the energy consumption trends over time.
 4. **Feature Engineering (`build_features.py`):** Creating additional features like day of the week, month, and hour to improve the model's performance.\
-       3.1 **Feature Engineering (`build_features_v2.py`):** Creating additional features like day of the year, yearly lags 1 and 2.
+       3.1 **Advanced Feature Engineering (`build_features_v2.py`):** Creating additional features like day of the year, yearly lags 1 and 2 (accounting for leap years).
 6. **Model Training and Evaluation (`train_model.py`):** Using XGBoost for time series forecasting and evaluating its performance on the 2019 data.
     - The XGBoost model was trained with early stopping to prevent overfitting.
     - Feature importance was analyzed to understand the impact of different time-related features.
