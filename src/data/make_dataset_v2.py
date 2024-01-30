@@ -67,6 +67,7 @@ for id in error_ids:
     if not prior_row.empty and not following_row.empty:
         df.loc[df['id'] == id, 'Consumption (MWh)'] = (prior_row['Consumption (MWh)'].values[0] + following_row['Consumption (MWh)'].values[0]) / 2
        
+## ADD MISSING HOURS TO DATA FRAME AND INTERPOLATE VALUES
 #check how many hours each year has
 print (df[df.index.year == 2016].shape) 
 print (df[df.index.year == 2017].shape)
@@ -85,7 +86,8 @@ print(24*365 - df[df.index.year == 2019].shape[0]) # 150
 
 # check df.index.hour for missing hours
 df.index.hour.value_counts().sort_index()
-# print all rows before and after missing hours
+
+# Identify missing hours
 missing_hour_info = []
 
 for i in range(1, len(df) - 1):
@@ -104,12 +106,25 @@ for before, after in missing_hour_info:
     print("Row after missing hour:\n", after)
     print('\n')
 
-# add new rows with missing hours and fill them with nan values for column Consumption (MWh)
-df['Consumption (MWh)'] = df['Consumption (MWh)'].reindex(index, fill_value=0)
+# create a datetime series ranging from 2016-01-01 00:00:00 to 2019-12-31 23:00:00
+dt_series = pd.date_range(start='2016-01-01 00:00:00', end='2019-12-31 23:00:00', freq='H') # 35064
+len(df) # 34696
 
+x = len(dt_series) - len(df) # => missing hours = 368 which aligns with the above calculation
 
+# left join df with dt_series based on index of df and dt_series so that all missing hours are added to df
+df_full = df.join(dt_series.to_frame(), how='right')
 
+# check if join worked as intended
+df_full[990:1000]
+len(df_full)
 
-# save data frame to data/processed.
-processed_data_path = r'C:\Users\Latitude\Desktop\Kaggle\time_series_energy_portfolio_project\data\processed\RealTimeConsumption-01012016-31122019.csv'
-df.to_csv(processed_data_path)
+# interpolate missing values
+df_full['Consumption (MWh)'] = df_full['Consumption (MWh)'].interpolate(method='linear', limit_direction='both')
+
+# drop id and 0 columns
+df_full.drop(['id', 0], axis=1, inplace=True)
+
+# save df_clean to data/processed.
+processed_data_path = r'C:\Users\Latitude\Desktop\Kaggle\time_series_energy_portfolio_project\data\processed\RealTimeConsumption-01012016-31122019_full.csv'
+df_full.to_csv(processed_data_path)
