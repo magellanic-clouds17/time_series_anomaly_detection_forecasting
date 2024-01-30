@@ -13,7 +13,6 @@ df['day_of_month'] = df.index.day
 df['month'] = df.index.month
 df['hour'] = df.index.hour
 df['day_of_week'] = df.index.dayofweek
-df['day_of_year'] = df.index.dayofyear
 
 # save data frame to data/processed as RealTimeConsumption-01012016-31122019_features.csv
 processed_data_path = r'C:\Users\Latitude\Desktop\Kaggle\time_series_energy_portfolio_project\data\processed\RealTimeConsumption-01012016-31122019_features.csv'
