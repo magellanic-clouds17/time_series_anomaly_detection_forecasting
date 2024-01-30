@@ -12,16 +12,16 @@ The dataset used is "Hourly Power Consumption of Turkey (2016-2020)" from Kaggle
 
 The project follows these steps:
 
-1. **Data Preprocessing (`make_dataset.py`):** Importing, cleaning, and preparing the dataset for analysis.
+1. **Data Preprocessing (`make_dataset.py`):** Importing, cleaning, and preparing the dataset for analysis.\
        1.1 **Data Preprocessing (`make_dataset_v2.py`):** adding missing hour rows and interpolate values
 3. **Exploratory Data Analysis (`visualize.py`):** Visualizing the energy consumption trends over time.
-4. **Feature Engineering (`build_features.py`):** Creating additional features like day of the week, month, and hour to improve the model's performance.
+4. **Feature Engineering (`build_features.py`):** Creating additional features like day of the week, month, and hour to improve the model's performance.\
        4.1 **Feature Engineering (`build_features_v2.py`):** Creating additional features like day of the year, yearly lags 1 and 2.
 6. **Model Training and Evaluation (`train_model.py`):** Using XGBoost for time series forecasting and evaluating its performance on the 2019 data.
     - The XGBoost model was trained with early stopping to prevent overfitting.
     - Feature importance was analyzed to understand the impact of different time-related features.
     - The model's predictions for the year 2019 were plotted against actual values, showing how closely the model could predict real-world data.
-    - Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.
+    - Evaluation metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score were used to quantify the model's accuracy.\
         6.1 **Model Training and Evaluation (`train_model_v2.py`):** Trained on data with more advanced cleaning and feature engineering.
 7. **Anomaly Detection (`anomaly_detection.py`):** Identifying unusual patterns in energy consumption.
     - Utilized the Isolation Forest algorithm to estimate and identify anomalies in the dataset.
